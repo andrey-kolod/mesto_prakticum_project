@@ -1,0 +1,7 @@
+.footer__copyright_text {
+  margin: 0;
+}
+
+.footer__copyright_text::before {
+  content: "© ";
+}

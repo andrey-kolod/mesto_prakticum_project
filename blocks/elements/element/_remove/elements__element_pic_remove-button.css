@@ -1,0 +1,22 @@
+.elements__element_pic_remove-button {
+  background-image: url(../../../../../images/Trash.svg);
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  stroke: black;
+}
+
+.elements__element_pic_remove-button:hover {
+  background-image: url(../../../../images/Trash_hover.svg);
+}
+
+.elements__element_pic_remove-button:active {
+  scale: 0.9;
+}
+
+.disable_btn {
+  display: none;
+}

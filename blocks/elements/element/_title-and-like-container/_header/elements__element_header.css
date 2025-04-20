@@ -1,0 +1,5 @@
+.elements__element_header {
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

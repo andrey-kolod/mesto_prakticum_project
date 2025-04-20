@@ -1,0 +1,18 @@
+.profile__info_edit-button-img {
+    background-image: url(../../../../images/Edit_Button.svg);
+    width: 24px;
+    height: 24px;
+    transition: transform 0.5s;
+}
+
+@media (max-width: 600px) {
+    .profile__info_edit-button-img {
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+    }
+}
+
+.profile__info_edit-button-img:active {
+    transform: scale(102%);
+}

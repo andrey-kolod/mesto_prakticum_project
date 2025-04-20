@@ -1,0 +1,15 @@
+.popup__container_header {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 29.05px;
+  margin: 18px 0 45px 37px;
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .popup__container_header {
+    font-size: 18px;
+    margin: 25px 0 30px;
+    align-self: center;
+  }
+}

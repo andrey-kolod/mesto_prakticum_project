@@ -1,0 +1,10 @@
+.full-screen-picture-container {
+  display: flex;
+  position: relative;
+  width: 75%;
+  margin-inline: auto;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(102, 102, 102, 0.74);
+}

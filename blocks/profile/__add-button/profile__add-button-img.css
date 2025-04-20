@@ -1,0 +1,18 @@
+.profile__add-button-img {
+  background-image: url(../../../images/Add_Button.svg);
+  width: 150px;
+  height: 50px;
+  transition: transform 0.5s;
+  background-size: 100%;
+}
+
+@media (max-width: 600px) {
+  .profile__add-button-img {
+    width: 282px;
+    background-image: url(../../../images/Add_Button_mobile.svg);
+  }
+}
+
+.profile__add-button-img:active {
+  transform: scale(102%);
+}

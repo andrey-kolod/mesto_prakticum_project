@@ -1,0 +1,10 @@
+.popup__container_input-container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+@media (max-weight: 600px) {
+  .popup__container_input-container {
+    margin-bottom: 10px;
+  }
+}

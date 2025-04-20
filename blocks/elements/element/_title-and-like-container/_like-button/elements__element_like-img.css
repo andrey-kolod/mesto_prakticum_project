@@ -1,0 +1,6 @@
+.elements__element_like-img {
+  background-image: url(../../../../../images/Group.svg);
+  width: 22px;
+  height: 19px;
+  transition: background-color 0.5s;
+}

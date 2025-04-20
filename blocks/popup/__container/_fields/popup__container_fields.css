@@ -1,0 +1,19 @@
+.popup__container_fields {
+  width: 100%;
+  height: 27px;
+  border: none;
+  border-bottom: 0.5px solid #7c7c7c;
+  outline: none;
+  font-style: italic;
+}
+
+.popup__container_fields::placeholder {
+  font-style: italic;
+}
+
+.popup__container_fields:invalid {
+  border-color: #dc3545;
+}
+.popup__container_fields:valid:focus {
+  border-color: #198754;
+}

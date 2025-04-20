@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css" />
+    <link rel="fonts" href="./vendor/fonts/inter.css" />
+    <link rel="icon" href="/images/favicon.png">
+  </head>
+  <body class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Место Раша" />
+    </header>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__info">
+          <div class="elements__element_pic_edit-icon">
+          <img
+          class="profile__info_avatar"
+          id="profile-user-avatar"
+          src=""
+          alt="Портрет Жак-Ив Кусто в красной шапке"
+          />
+        </div>
+          <div class="profile__info_name-and-desc-container">
+            <div class="profile__info_name-and-button-container">
+              <h1 class="profile__info_name" id="profile-user-name"></h1>
+              <button class="button profile__info_edit-button">
+                <div
+                  class="profile__info_edit-button-img"
+                  id="edit-button"
+                ></div>
+              </button>
+            </div>
+            <p class="profile__info_about" id="profile-user-about"></p>
+          </div>
+        </div>
+        <button class="button profile__add-button" id="add-picture-button">
+          <div class="profile__add-button-img"></div>
+        </button>
+      </section>
+      <section class="elements">
+        <template id="place">
+          <div class="elements__element">
+            <div class="elements__element_img-container">
+              <img src="" alt="Место" class="elements__element_pic" onerror="this.src = './images/nophoto.jpg'"/>
+              <div class="elements__element_pic_remove-button"></div>
+            </div>
+            <div class="elements__element_title-and-like-container">
+              <h2 class="elements__element_header"></h2>
+              <div class="elements__element_like-container">
+              <button class="button elements__element_like-button">
+                <div class="elements__element_like-img"></div>
+              </button>
+              <span class="elements__element_like-counter">0</span>
+          </div>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__copyright_container">
+        <p class="footer__copyright_text">2020 Mesto Russia</p>
+      </div>
+    </footer>
+    <section class="popup popup_closed" id="edit-profile-popup">
+      <form class="popup__container" name="editProfileForm" >
+        <h3 class="popup__container_header">Редактировать профиль</h3>
+        <div class="popup__container_input-container">
+          <label for="edit-user-name" class="popup__container_field-label" 
+            >Ваше имя
+          </label>
+          <input
+            type="text"
+            name="userName"
+            class="popup__container_fields profile-input"
+            id="edit-user-name"
+            placeholder="Имя"
+            minlength="2"
+            maxlength="40"
+            required
+            autocomplete="off"
+            pattern="^[a-zA-Zа-яА-яЁё0-9_ \-]+$"
+          />
+          <span class="popup__container_field-error"></span>
+        </div>
+        <div class="popup__container_input-container">
+          <label
+            for="edit-user-about"
+            class="popup__container_field-label"
+            >Немного о Вас
+          </label>
+          <input
+            type="text"
+            name="userAbout"
+            class="popup__container_fields profile-input"
+            id="edit-user-about"
+            placeholder="О Вас"
+          minlength="2"
+            maxlength="200"
+            required
+            autocomplete="off"
+            pattern="^[a-zA-Zа-яА-яЁё0-9_ \-]+$"
+          />
+          <span class="popup__container_field-error"></span>
+        </div>
+        <button
+          type="submit"
+          class="button popup__container_save-button"
+          id="save-profile-button"
+        >
+          Сохранить
+        </button>
+        <button
+          class="button popup__close-button"
+          id="profile-popup-close-button"
+        ></button>
+      </form>
+    </section>
+    <section class="popup popup_closed" id="add-pictures-popup">
+      <form class="popup__container" name="addPlaceForm" novalidate>
+        <h3 class="popup__container_header">Новое место</h3>
+        <div class="popup__container_input-container">
+          <label for="edit-place-name" class="popup__container_field-label"
+            >Название
+          </label>
+          <input
+            type="text"
+            name="placeName"
+            class="popup__container_fields place-input"
+            id="edit-place-name"
+            placeholder="Москва"
+            minlength="2"
+            maxlength="30"
+            required
+            autocomplete="off"
+            pattern="^[a-zA-Zа-яА-яЁё0-9_ \-]+$"
+          />
+          <span class="popup__container_field-error"></span>
+        </div>
+        <div class="popup__container_input-container">
+          <label for="edit-place-link" class="popup__container_field-label"
+            >Ссылка на изображение
+          </label>
+          <input
+            type="url"
+            name="placeLink"
+            class="popup__container_fields place-input"
+            id="edit-place-link"
+            placeholder="https://unsplash.com"
+            required
+            autocomplete="off"
+            pattern="(?:(?:https?|ftp):\/\/)?[\w\/\-?=%.]+\.[\w\/\-?=%.]+"
+            
+          />
+          <span class="popup__container_field-error"></span>
+        </div>
+        <button
+          type="submit"
+          class="button popup__container_save-button"
+          id="save-pictures-button"
+        >
+          Сохранить
+        </button>
+        <button
+          class="button popup__close-button"
+          id="pictures-popup-close-button"
+        ></button>
+      </form>
+    </section>
+ <section class="popup popup_closed" id="change-avatar">
+      <form class="popup__container" name="changeAvatar" novalidate>
+        <h3 class="popup__container_header">Обновить аватар</h3>
+        <div class="popup__container_input-container">
+          <label for="edit-avatar-link" class="popup__container_field-label"
+            >Ссылка
+          </label>
+          <input
+            type="url"
+            name="avatarLink"
+            class="popup__container_fields avatar-input"
+            id="input-avatar-link"
+            placeholder="https://unsplash.com"
+            required
+            autocomplete="off"
+            pattern="(?:(?:https?|ftp):\/\/)?[\w\/\-?=%.]+\.[\w\/\-?=%.]+"
+            
+          />
+          <span class="popup__container_field-error"></span>
+        </div>
+        <button
+          type="submit"
+          class="button popup__container_save-button"
+          id="save-avatar-button"
+        >
+          Сохранить
+        </button>
+        <button
+          class="button popup__close-button"
+          id="avatar-popup-close-button"
+        ></button>
+      </form>
+    </section>
+
+
+    <section class="popup popup_closed" id="confirm-delete-picture-popup">
+      <form class="popup__container" name="deleteConfirmation" novalidate>
+        <h3 class="popup__container_header">Вы уверены?</h3>
+        <button
+          type="submit"
+          class="button popup__delete-card-confirm-button"
+          id="confirm-delete-picture-button"
+        >
+          Да 
+        </button>
+        <button
+          class="button popup__close-button"
+          id="confirm-delete-pictures-popup-close-button"
+        ></button>
+      </form>
+    </section>
+
+
+
+    <section class="popup popup_closed" id="full-screen-picture-popup">
+      <div class="full-screen-picture-container" ">
+        <img src="" class="full-screen-picture" />
+        <h4 class="full-screen-picture-header"></h4>
+        <button
+        class="button popup__close-button"
+        id="full-screen-picture-close-button"
+        ></button>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="./index.js"></script>
+</html>

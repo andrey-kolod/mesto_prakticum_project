@@ -1,0 +1,7 @@
+.elements__element_title-and-like-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+}
