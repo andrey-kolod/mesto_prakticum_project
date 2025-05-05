@@ -1,8 +1,8 @@
 // Конфигурация сервера
 const config = {
-  baseUrl: "https://nomoreparties.co/v1/wff-cohort-9",
+  baseUrl: "https://nomoreparties.co/v1/wff-cohort-#",
   headers: {
-    authorization: "14b58559-029e-496e-9a10-e787d4f1cf4c",
+    authorization: "******************",
     "Content-Type": "application/json",
   },
 };
